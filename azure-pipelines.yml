@@ -16,7 +16,7 @@ steps:
 
 - script: |
     echo "🛠️ Mevcut dosyaları temizleme..."
-    rm -rf /home/humayun/web_docker/www/*
+    sudo rm -rf /home/humayun/web_docker/www/*
   displayName: 'Hedef Dizini Temizle'
 
 - script: |
