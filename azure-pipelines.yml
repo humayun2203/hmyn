@@ -1,14 +1,10 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main  # Ana branch'teki değişikliklerde çalıştır
 
 pool:
-  vmImage: 'ubuntu-latest'
-  name: Default
+  name: Default  # Self-hosted agent havuzun adı
+  demands:
+    - Agent.Version -gtVersion 2.163.1  # Agent sürüm kontrolü
 
 steps:
 - script: echo "Merhaba, Azure DevOps!"
