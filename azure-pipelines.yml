@@ -1,0 +1,12 @@
+trigger:
+- main  # Ana branch'teki değişikliklerde çalıştır
+
+pool:
+  name: Default  # Self-hosted agent havuzun adı
+  demands:
+    - Agent.Version -gtVersion 2.163.1  # Agent sürüm kontrolü
+
+steps:
+- script: echo "Merhaba, Azure DevOps!"
+  displayName: 'Test Pipeline Çalıştırma'
+
