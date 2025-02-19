@@ -21,10 +21,10 @@ steps:
 
 - script: |
     echo "📂 Dosyaları kopyalıyorum..."
-    cp -r $(Build.SourcesDirectory)/* /home/humayun/web_docker/www/
+    cp -r $(Build.SourcesDirectory)/* /home/humayun/
   displayName: 'Kodları Sunucuya Kopyala'
 
 - script: |
     echo "🎯 Deploy tamamlandı!"
-    ls -l /home/humayun/web_docker/www/
+    ls -l /home/humayun/
   displayName: 'Deploy Sonrası Kontrol'
