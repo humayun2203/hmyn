@@ -21,7 +21,7 @@ steps:
 
 - script: |
     echo "📂 Dosyaları kopyalıyorum..."
-    cp -r $(Build.SourcesDirectory)/* /home/humayun/
+    sudo cp -r $(Build.SourcesDirectory)/* /home/humayun/
   displayName: 'Kodları Sunucuya Kopyala'
 
 - script: |
