@@ -7,6 +7,24 @@ pool:
     - Agent.Version -gtVersion 2.163.1  # Agent sürüm kontrolü
 
 steps:
-- script: echo "Merhaba, Azure DevOps!"
-  displayName: 'Test Pipeline Çalıştırma'
+- script: echo "🚀 Pipeline başlatıldı!"
+  displayName: 'Pipeline Başlat'
 
+- checkout: self
+  clean: true
+  displayName: 'Kodları Checkout Et'
+
+- script: |
+    echo "🛠️ Mevcut dosyaları temizleme..."
+    rm -rf /home/humayun/web_docker/www/*
+  displayName: 'Hedef Dizini Temizle'
+
+- script: |
+    echo "📂 Dosyaları kopyalıyorum..."
+    cp -r $(Build.SourcesDirectory)/* /home/humayun/web_docker/www/
+  displayName: 'Kodları Sunucuya Kopyala'
+
+- script: |
+    echo "🎯 Deploy tamamlandı!"
+    ls -l /home/humayun/web_docker/www/
+  displayName: 'Deploy Sonrası Kontrol'
